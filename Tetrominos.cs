@@ -18,7 +18,7 @@ namespace Tetris
         };
 
         public override int Id => 1;
-        protected override Position StartOffset => new Position(-1, 3);
+        protected override Position StartOffset => new(-1, 3);
         public override Position[][] Tiles => tiles;
     }
 
@@ -30,7 +30,7 @@ namespace Tetris
         };
 
         public override int Id => 2;
-        protected override Position StartOffset => new Position(0, 4);
+        protected override Position StartOffset => new(0, 4);
         public override Position[][] Tiles => tiles;
     }
 
@@ -45,7 +45,7 @@ namespace Tetris
         };
 
         public override int Id => 3;
-        protected override Position StartOffset => new Position(0, 3);
+        protected override Position StartOffset => new(0, 3);
         public override Position[][] Tiles => tiles;
     }
 
@@ -60,7 +60,7 @@ namespace Tetris
         };
 
         public override int Id => 4;
-        protected override Position StartOffset => new Position(0, 3);
+        protected override Position StartOffset => new(0, 3);
         public override Position[][] Tiles => tiles;
     }
 
@@ -75,7 +75,7 @@ namespace Tetris
         };
 
         public override int Id => 5;
-        protected override Position StartOffset => new Position(0, 3);
+        protected override Position StartOffset => new(0, 3);
         public override Position[][] Tiles => tiles;
     }
 
@@ -90,7 +90,7 @@ namespace Tetris
         };
 
         public override int Id => 6;
-        protected override Position StartOffset => new Position(0, 3);
+        protected override Position StartOffset => new(0, 3);
         public override Position[][] Tiles => tiles;
     }
 
@@ -101,13 +101,11 @@ namespace Tetris
             new Position[] { new(0, 2), new(1, 0), new(1, 1), new(1, 2) },
             new Position[] { new(0, 1), new(1, 1), new(2, 1), new(2, 2) },
             new Position[] { new(1, 0), new(1, 1), new(1, 2), new(2, 0) },
-            new Position[] { new(0, 0), new(0, 1), new(1, 1), new(2, 1) },
+            new Position[] { new(0, 1), new(0, 2), new(1, 1), new(2, 1) },
         };
 
         public override int Id => 7;
-        protected override Position StartOffset => new Position(0, 3);
+        protected override Position StartOffset => new(0, 3);
         public override Position[][] Tiles => tiles;
     }
-
-    public record Position(int Row, int Column);
 }

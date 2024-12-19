@@ -1,55 +1,45 @@
-using Sytem.Collections.Generic;
+using System;
 
 namespace Tetris
 {
-    public class Block
+    public class BlockQueue
     {
-        protected Position[][] Tiles { get;}
-        protected Position[][] StartOffset { get;}
-        public abstract int Id { get; }
-        private int rotationState;
-        private Position offset;
+        private readonly Block[] blocks;
+        private readonly Random rand = new Random();
 
-        public Block()
-        {
-            offset = new Position(StartOffset.Row, StartOffset.Column);
-        }
+        public Block NextBlock { get; private set; }
 
-        public Ienumerble<Position> TilePositions()
+        public BlockQueue()
         {
-            foreach (Position pos in Tile[rotationState])
+            blocks = new Block[]
             {
-                yield return new Position(pos.Row + offset.Row, pos.Column + offset.Column);
-            }
+                new IBlock(),
+                new OBlock(),
+                new TBlock(),
+                new SBlock(),
+                new ZBlock(),
+                new JBlock(),
+                new LBlock(),
+            };
+            NextBlock = RandomBlock();
         }
 
-        public void RotateCW()
+        private Block RandomBlock()
         {
-            rotationState = (rotationState + 1) % Tiles.Length;
+            return blocks[rand.Next(blocks.Length)];
         }
 
-        public void RotateCCW()
+        public Block GetAnUpdate()
         {
-            if (rotationState == 0)
+            Block current = NextBlock;
+
+            do
             {
-                rotationState = Tiles.Length - 1;
+                NextBlock = RandomBlock();
             }
-            else
-            {
-                rotationState--;
-            }
-        }
+            while (NextBlock.Id == current.Id);
 
-        public void Move(int rows, int columns)
-        {
-            offset.Row += rows;
-            offset.Column += columns;
-        }
-
-        public void Reset(){
-            rotationState =0;
-            offset.Row = StartOffset.Row;
-            offset.Column = StartOffset.Column;
+            return current;
         }
     }
 }
