@@ -1,16 +1,21 @@
-namespace Tetris
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TetrisC
 {
     public class GameGrid
     {
         private readonly int[,] grid;
+        public int Rows { get; set; }
+        public int Columns { get; set; }
 
-        public int Rows { get; }
-        public int Columns { get; }
-
-        public int this[int row, int column]
+        public int this[int r, int c]
         {
-            get => grid[row, column];
-            set => grid[row, column] = value;
+            get => grid[r, c];
+            set => grid[r, c] = value;
         }
 
         public GameGrid(int rows, int columns)
@@ -20,21 +25,21 @@ namespace Tetris
             grid = new int[rows, columns];
         }
 
-        public bool IsInside(int row, int column)
+        public bool IsInside(int r, int c)
         {
-            return row >= 0 && row < Rows && column >= 0 && column < Columns;
+            return r >= 0 && r < Rows && c >= 0 && c < Columns;
         }
 
-        public bool IsEmpty(int row, int column)
+        public bool IsEmpty(int r, int c)
         {
-            return IsInside(row, column) && grid[row, column] == 0;
+            return IsInside(r, c) && grid[r, c] == 0;
         }
 
-        public bool IsRowFull(int row)
+        public bool IsRowFull(int r)
         {
-            for (int column = 0; column < Columns; column++)
+            for (int c = 0; c < Columns; c++)
             {
-                if (grid[row, column] == 0)
+                if (grid[r, c] == 0)
                 {
                     return false;
                 }
@@ -42,11 +47,11 @@ namespace Tetris
             return true;
         }
 
-        public bool IsRowEmpty(int row)
+        public bool IsRowEmpty(int r)
         {
-            for (int column = 0; column < Columns; column++)
+            for (int c = 0; c < Columns; c++)
             {
-                if (grid[row, column] != 0)
+                if (grid[r, c] != 0)
                 {
                     return false;
                 }
@@ -54,20 +59,20 @@ namespace Tetris
             return true;
         }
 
-        private void ClearRow(int row)
+        private void ClearRow(int r)
         {
-            for (int column = 0; column < Columns; column++)
+            for (int c = 0; c < Columns; c++)
             {
-                grid[row, column] = 0;
+                grid[r, c] = 0;
             }
         }
 
-        private void MoveRowDown(int row, int numRows)
+        private void MoveRowDown(int r, int numRows)
         {
-            for (int column = 0; column < Columns; column++)
+            for (int c = 0; c < Columns; c++)
             {
-                grid[row + numRows, column] = grid[row, column];
-                grid[row, column] = 0;
+                grid[r + numRows, c] = grid[r, c];
+                grid[r, c] = 0;
             }
         }
 
@@ -75,19 +80,18 @@ namespace Tetris
         {
             int cleared = 0;
 
-            for (int row = Rows - 1; row >= 0; row--)
+            for (int r = Rows - 1; r >= 0; r--)
             {
-                if (IsRowFull(row))
+                if (IsRowFull(r))
                 {
-                    ClearRow(row);
+                    ClearRow(r);
                     cleared++;
                 }
                 else if (cleared > 0)
                 {
-                    MoveRowDown(row, cleared);
+                    MoveRowDown(r, cleared);
                 }
             }
-
             return cleared;
         }
     }

@@ -1,21 +1,21 @@
-using System;
+﻿using System;
 
-namespace Tetris
+namespace TetrisC
 {
     public class BlockQueue
     {
         private readonly Block[] blocks = new Block[]
         {
             new IBlock(),
-            new OBlock(),
+            new JBlock(),
             new TBlock(),
+            new LBlock(),
             new SBlock(),
             new ZBlock(),
-            new JBlock(),
-            new LBlock(),
+            new OBlock()
         };
 
-        private readonly Random rand = new Random();
+        private readonly Random random = new Random();
 
         public Block NextBlock { get; private set; }
 
@@ -26,20 +26,20 @@ namespace Tetris
 
         private Block RandomBlock()
         {
-            return blocks[rand.Next(blocks.Length)];
+            return blocks[random.Next(blocks.Length)];
         }
 
-        public Block GetAnUpdate()
+        public Block GetAndUpdate()
         {
-            Block current = NextBlock;
+            Block block = NextBlock;
 
             do
             {
                 NextBlock = RandomBlock();
             }
-            while (NextBlock.Id == current.Id);
+            while (block.Id == NextBlock.Id);
 
-            return current;
+            return block;
         }
     }
 }
