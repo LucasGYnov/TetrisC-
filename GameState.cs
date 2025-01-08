@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TetrisC
 {
@@ -34,6 +30,8 @@ namespace TetrisC
         public BlockQueue BlockQueue { get; }
         public bool GameOver { get; private set; }
         public int Score { get; private set; }
+        public int Level { get; private set; }
+        public int LinesCleared { get; private set; }
         public Block HeldBlock { get; private set; }
         public bool CanHold { get; private set; }
 
@@ -43,6 +41,9 @@ namespace TetrisC
             BlockQueue = new BlockQueue();
             CurrentBlock = BlockQueue.GetAndUpdate();
             CanHold = true;
+            Score = 0;
+            Level = 0;
+            LinesCleared = 0;
         }
 
         private bool BlockFits()
@@ -87,7 +88,7 @@ namespace TetrisC
             }
         }
 
-        public void RotateBlcokCCW()
+        public void RotateBlockCCW()
         {
             CurrentBlock.RotateCCW();
 
@@ -122,6 +123,22 @@ namespace TetrisC
             return !(GameGrid.IsRowEmpty(0) && GameGrid.IsRowEmpty(1));
         }
 
+        private void CalculateScore(int linesCleared)
+        {
+            int[] pointsPerLine = { 0, 40, 100, 300, 1200 }; // Points pour 0, 1, 2, 3, et 4 lignes
+            if (linesCleared > 0 && linesCleared <= 4)
+            {
+                Score += pointsPerLine[linesCleared] * (Level + 1);
+                LinesCleared += linesCleared;
+
+                // Augmenter le niveau tous les 10 lignes complétées
+                if (LinesCleared / 10 > Level)
+                {
+                    Level++;
+                }
+            }
+        }
+
         private void PlaceBlock()
         {
             foreach (Position p in CurrentBlock.TilePositions())
@@ -129,7 +146,8 @@ namespace TetrisC
                 GameGrid[p.Row, p.Column] = CurrentBlock.Id;
             }
 
-            Score += GameGrid.ClearFullRows();
+            int clearedLines = GameGrid.ClearFullRows();
+            CalculateScore(clearedLines);
 
             if (IsGameOver())
             {
@@ -151,6 +169,10 @@ namespace TetrisC
                 CurrentBlock.Move(-1, 0);
                 PlaceBlock();
             }
+            else
+            {
+                Score += 1; // 1 point par case en soft drop
+            }
         }
 
         private int TileDropDistance(Position position)
@@ -170,14 +192,16 @@ namespace TetrisC
 
             foreach (Position position in CurrentBlock.TilePositions())
             {
-                drop = System.Math.Min(drop, TileDropDistance(position));
+                drop = Math.Min(drop, TileDropDistance(position));
             }
             return drop;
         }
 
         public void DropBlock()
         {
-            CurrentBlock.Move(BlockDropDistance(), 0);
+            int dropDistance = BlockDropDistance();
+            CurrentBlock.Move(dropDistance, 0);
+            Score += dropDistance * 2; // 2 points par case en hard drop
             PlaceBlock();
         }
     }

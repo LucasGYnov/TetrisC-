@@ -1,24 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using TetrisAIProject;
 
 namespace TetrisC
 {
-
     public partial class MainWindow : Window
     {
-        private readonly ImageSource[] tileImages = new ImageSource[]
+        private readonly ImageSource[] tileImages = new ImageSource[] 
         {
             new BitmapImage(new Uri("Assets/TileEmpty.png", UriKind.Relative)),
             new BitmapImage(new Uri("Assets/TileCyan.png", UriKind.Relative)),
@@ -30,7 +23,7 @@ namespace TetrisC
             new BitmapImage(new Uri("Assets/TileRed.png", UriKind.Relative))
         };
 
-        private readonly ImageSource[] blockImages = new ImageSource[]
+        private readonly ImageSource[] blockImages = new ImageSource[] 
         {
             new BitmapImage(new Uri("Assets/Block-Empty.png", UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Block-I.png", UriKind.Relative)),
@@ -43,16 +36,19 @@ namespace TetrisC
         };
 
         private readonly Image[,] imageControls;
-        private readonly int maxDelay = 1000;
-        private readonly int minDelay = 100;
-        private readonly int delayDecrease = 25;
-        private GameState gameState = new GameState();
+        private readonly int[] dropDelays = 
+        {
+            1000, 793, 618, 473, 355, 262, 190, 135, 94, 64, 43, 28, 18, 11, 7, 5, 3, 2, 1, 1
+        }; // Temps en millisecondes par niveau (Tetris guideline)
 
+        private GameState gameState = new GameState();
+        private TetrisAI ai;
 
         public MainWindow()
         {
             InitializeComponent();
             imageControls = SetupGameCanvas(gameState.GameGrid);
+            ai = new TetrisAI(gameState, gameState.BlockQueue);
         }
 
         private Image[,] SetupGameCanvas(GameGrid grid)
@@ -105,7 +101,6 @@ namespace TetrisC
         {
             Block next = blockQueue.NextBlock;
             NextImage.Source = blockImages[next.Id];
-
         }
 
         private void DrawHeldBlock(Block heldBlock)
@@ -140,6 +135,8 @@ namespace TetrisC
             DrawHeldBlock(gameState.HeldBlock);
 
             ScoreText.Text = $"Score: {gameState.Score}";
+            LevelText.Text = $"Level: {gameState.Level}";
+            LinesText.Text = $"Lines: {gameState.LinesCleared}";
         }
 
         private async Task GameLoop()
@@ -148,9 +145,11 @@ namespace TetrisC
 
             while (!gameState.GameOver)
             {
-                int delay = Math.Max(minDelay, maxDelay - (gameState.Score * delayDecrease));
+                int level = Math.Min(gameState.Level, dropDelays.Length - 1);
+                int delay = dropDelays[level];
                 await Task.Delay(delay);
-                gameState.MoveBlockDown();
+
+                ai.MakeMove(); // L'IA fait un mouvement
                 Draw(gameState);
             }
 
@@ -180,7 +179,7 @@ namespace TetrisC
                     gameState.RotateBlockCW();
                     break;
                 case Key.Z:
-                    gameState.RotateBlcokCCW();
+                    gameState.RotateBlockCCW();
                     break;
                 case Key.C:
                     gameState.HoldBlock();
@@ -193,11 +192,9 @@ namespace TetrisC
             }
 
             Draw(gameState);
-
         }
 
         private async void GameCanvas_Loaded(object sender, RoutedEventArgs e)
-
         {
             await GameLoop();
             Draw(gameState);
@@ -209,6 +206,5 @@ namespace TetrisC
             GameOverMenu.Visibility = Visibility.Hidden;
             await GameLoop();
         }
-
     }
 }

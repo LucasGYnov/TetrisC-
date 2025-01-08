@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TetrisC
 {
@@ -76,6 +72,10 @@ namespace TetrisC
             }
         }
 
+        /// <summary>
+        /// Efface les lignes complètes et retourne le nombre de lignes effacées.
+        /// </summary>
+        /// <returns>Nombre de lignes complétées en une seule fois.</returns>
         public int ClearFullRows()
         {
             int cleared = 0;
@@ -92,6 +92,7 @@ namespace TetrisC
                     MoveRowDown(r, cleared);
                 }
             }
+
             return cleared;
         }
     }

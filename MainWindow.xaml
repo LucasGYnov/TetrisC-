@@ -50,6 +50,12 @@
                    Text="Score: "
                    Margin="0,10"
                    TextAlignment="Center"/>
+        <TextBlock x:Name="LevelText"
+                   Text="Level: 1"
+                   TextAlignment="Center"/>
+        <TextBlock x:Name="LinesText"
+                   Text="Lines: 0"
+                   TextAlignment="Center"/>
 
         <StackPanel Grid.Row="1"
                     Grid.Column="0"

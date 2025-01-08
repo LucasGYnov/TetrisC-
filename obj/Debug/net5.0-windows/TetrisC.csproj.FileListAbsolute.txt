@@ -1,0 +1,42 @@
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.cache
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.lref
+C:\Users\lucas\source\repos\TetrisC\TetrisC\bin\Debug\net5.0-windows\TetrisC.exe
+C:\Users\lucas\source\repos\TetrisC\TetrisC\bin\Debug\net5.0-windows\TetrisC.deps.json
+C:\Users\lucas\source\repos\TetrisC\TetrisC\bin\Debug\net5.0-windows\TetrisC.runtimeconfig.json
+C:\Users\lucas\source\repos\TetrisC\TetrisC\bin\Debug\net5.0-windows\TetrisC.runtimeconfig.dev.json
+C:\Users\lucas\source\repos\TetrisC\TetrisC\bin\Debug\net5.0-windows\TetrisC.dll
+C:\Users\lucas\source\repos\TetrisC\TetrisC\bin\Debug\net5.0-windows\TetrisC.pdb
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.g.resources
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.AssemblyInfoInputs.cache
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.AssemblyInfo.cs
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.dll
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\refint\TetrisC.dll
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.pdb
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\TetrisC.genruntimeconfig.cache
+C:\Users\lucas\source\repos\TetrisC\TetrisC\obj\Debug\net5.0-windows\ref\TetrisC.dll
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\bin\Debug\net5.0-windows\TetrisC.exe
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\bin\Debug\net5.0-windows\TetrisC.deps.json
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\bin\Debug\net5.0-windows\TetrisC.runtimeconfig.json
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\bin\Debug\net5.0-windows\TetrisC.runtimeconfig.dev.json
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\bin\Debug\net5.0-windows\TetrisC.dll
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\bin\Debug\net5.0-windows\TetrisC.pdb
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.cache
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.lref
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.g.resources
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.AssemblyInfoInputs.cache
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.AssemblyInfo.cs
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.dll
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\refint\TetrisC.dll
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.pdb
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\TetrisC.genruntimeconfig.cache
+C:\Users\lucas\source\repos\TetrisC - Copie\TetrisC\obj\Debug\net5.0-windows\ref\TetrisC.dll
