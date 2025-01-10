@@ -49,6 +49,8 @@ namespace TetrisC
             InitializeComponent();
             imageControls = SetupGameCanvas(gameState.GameGrid);
             ai = new TetrisAI(gameState, gameState.BlockQueue);
+
+            ShowMenu();
         }
 
         private Image[,] SetupGameCanvas(GameGrid grid)
@@ -103,7 +105,7 @@ namespace TetrisC
             NextImage.Source = blockImages[next.Id];
         }
 
-        private void DrawHeldBlock(Block heldBlock)
+        private void DrawHeldBlock(Block? heldBlock)
         {
             if (heldBlock == null)
             {
@@ -149,6 +151,8 @@ namespace TetrisC
                 int delay = dropDelays[level];
                 await Task.Delay(delay);
 
+
+                gameState.MoveBlockDown();
                 ai.MakeMove(); // L'IA fait un mouvement
                 Draw(gameState);
             }
@@ -196,14 +200,47 @@ namespace TetrisC
 
         private async void GameCanvas_Loaded(object sender, RoutedEventArgs e)
         {
-            await GameLoop();
-            Draw(gameState);
+            if (MainMenu.Visibility == Visibility.Collapsed)
+            {
+                await GameLoop();
+            }
         }
 
         private async void PlayAgain_Click(object sender, RoutedEventArgs e)
         {
             gameState = new GameState();
             GameOverMenu.Visibility = Visibility.Hidden;
+            await GameLoop();
+        }
+
+        public void ShowMenu()
+        {
+            MainMenu.Visibility = Visibility.Visible;
+            GameArea.Visibility = Visibility.Collapsed;
+        }
+
+        private void StartGame_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu.Visibility = Visibility.Collapsed;
+            GameArea.Visibility = Visibility.Visible;
+
+            InitializeGame();
+        }
+
+        private void ShowOptions_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void QuitGame_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown(); 
+        }
+
+        private async void InitializeGame()
+        {
+            gameState = new GameState();
+            GameOverMenu.Visibility = Visibility.Hidden;
+
             await GameLoop();
         }
     }

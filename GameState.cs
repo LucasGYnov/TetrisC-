@@ -11,7 +11,7 @@ namespace TetrisC
             get => currentBlock;
             private set
             {
-                currentBlock = value;
+                currentBlock = value ?? throw new ArgumentNullException(nameof(value));
                 currentBlock.Reset();
 
                 for (int i = 0; i < 2; i++)
@@ -32,15 +32,14 @@ namespace TetrisC
         public int Score { get; private set; }
         public int Level { get; private set; }
         public int LinesCleared { get; private set; }
-        public Block HeldBlock { get; private set; }
+        public Block? HeldBlock { get; private set; }
         public bool CanHold { get; private set; }
 
         public GameState()
         {
             GameGrid = new GameGrid(22, 10);
             BlockQueue = new BlockQueue();
-            CurrentBlock = BlockQueue.GetAndUpdate();
-            CanHold = true;
+            currentBlock = BlockQueue.GetAndUpdate();
             Score = 0;
             Level = 0;
             LinesCleared = 0;
@@ -203,6 +202,28 @@ namespace TetrisC
             CurrentBlock.Move(dropDistance, 0);
             Score += dropDistance * 2; // 2 points par case en hard drop
             PlaceBlock();
+        }
+
+        public void ApplyMove(string move)
+        {
+            switch (move)
+            {
+                case "Left":
+                    MoveBlockLeft();
+                    break;
+                case "Right":
+                    MoveBlockRight();
+                    break;
+                case "RotateCW":
+                    RotateBlockCW();
+                    break;
+                case "RotateCCW":
+                    RotateBlockCCW();
+                    break;
+                case "Drop":
+                    DropBlock();
+                    break;
+            }
         }
     }
 }

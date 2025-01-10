@@ -9,7 +9,7 @@ namespace TetrisAIProject
         private GameState gameState;
         private BlockQueue blockQueue;
 
-        public TetrisC(GameState gameState, BlockQueue blockQueue)
+        public TetrisAI(GameState gameState, BlockQueue blockQueue)
         {
             this.gameState = gameState;
             this.blockQueue = blockQueue;
@@ -49,7 +49,7 @@ namespace TetrisAIProject
         private GameState SimulateMove(string move)
         {
             // Crée une simulation du jeu avec le mouvement donné appliqué
-            GameState simulatedState = new GameState(gameState);
+            GameState simulatedState = new GameState();
             simulatedState.ApplyMove(move);
             return simulatedState;
         }
