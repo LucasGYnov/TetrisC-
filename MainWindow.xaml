@@ -13,7 +13,10 @@
 
     <Grid>
 
-        <Grid x:Name="MainMenu" Background="Black" Visibility="Visible">
+        <Grid x:Name="MainMenu" Visibility="Visible">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/Background.png" />
+            </Grid.Background>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="TETRIS" FontSize="36" Foreground="White" Margin="0,0,0,20"/>
                 <Button Content="Jouer" Click="StartGame_Click" Width="200" Height="50" Margin="0,10"/>
@@ -55,18 +58,26 @@
                     Loaded="GameCanvas_Loaded"/>
             </Viewbox>
 
-            <TextBlock x:Name="ScoreText"
-                   Grid.Row="0"
-                   Grid.Column="1"
-                   Text="Score: "
-                   Margin="0,10"
-                   TextAlignment="Center"/>
-            <TextBlock x:Name="LevelText"
-                   Text="Level: 1"
-                   TextAlignment="Center"/>
-            <TextBlock x:Name="LinesText"
-                   Text="Lines: 0"
-                   TextAlignment="Center"/>
+            <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10">
+                <TextBlock x:Name="ScoreText"
+               Text="Score: 0"
+               FontSize="24"
+               Foreground="White"
+               Margin="0,0,0,10"
+               TextAlignment="Left"/>
+                <TextBlock x:Name="LevelText"
+               Text="Level: 1"
+               FontSize="24"
+               Foreground="White"
+               Margin="0,0,0,10"
+               TextAlignment="Left"/>
+                <TextBlock x:Name="LinesText"
+               Text="Lines: 0"
+               FontSize="24"
+               Foreground="White"
+               TextAlignment="Left"/>
+            </StackPanel>
+
 
             <StackPanel Grid.Row="1"
                     Grid.Column="0"
