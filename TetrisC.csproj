@@ -9,6 +9,8 @@
     <StartupObject>TetrisC.App</StartupObject>
   </PropertyGroup>
 
+
+
   <ItemGroup>
     <None Remove="Assets\Background.png" />
     <None Remove="Assets\Block-Empty.png" />
@@ -29,6 +31,18 @@
     <None Remove="Assets\TilePurple.png" />
     <None Remove="Assets\TileRed.png" />
     <None Remove="Assets\TileYellow.png" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Page Remove="codecsharp\App.xaml" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <ApplicationDefinition Include="codecsharp\App.xaml" />
   </ItemGroup>
 
   <ItemGroup>

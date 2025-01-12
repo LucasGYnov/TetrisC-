@@ -1,14 +1,16 @@
-C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\MainWindow.g.cs
-C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\App.g.cs
-C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.cache
-C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.lref
+C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\Assets\LofiLion-TameTheBeast.mp3
 C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\TetrisC.exe
 C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\TetrisC.deps.json
 C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\TetrisC.runtimeconfig.json
 C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\TetrisC.runtimeconfig.dev.json
 C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\TetrisC.dll
 C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\TetrisC.pdb
-C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\codecsharp\MainWindow.g.cs
+C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\codecsharp\App.g.cs
+C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC_Content.g.cs
+C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.cache
+C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC_MarkupCompile.lref
+C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\codecsharp\MainWindow.baml
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC.g.resources
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC.AssemblyInfoInputs.cache
@@ -20,5 +22,3 @@ C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\refint\TetrisC.dll
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC.pdb
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC.genruntimeconfig.cache
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\ref\TetrisC.dll
-C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\Assets\LofiLion-TameTheBeast.mp3
-C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC_Content.g.cs
