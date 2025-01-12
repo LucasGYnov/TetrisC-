@@ -358,7 +358,6 @@ namespace TetrisC
         private void MusicToggle_Checked(object sender, RoutedEventArgs e)
         {
             backgroundMusicPlayer.Volume = 1.0;
-            backgroundMusicPlayer.Play();
         }
 
         private void MusicToggle_Unchecked(object sender, RoutedEventArgs e)
