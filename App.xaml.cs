@@ -16,11 +16,6 @@ namespace TetrisC
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
-            // Chargez et affichez le menu principal
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowMenu(); // Assurez-vous que la méthode ShowMenu est bien accessible.
-            mainWindow.Show();
         }
     }
 }

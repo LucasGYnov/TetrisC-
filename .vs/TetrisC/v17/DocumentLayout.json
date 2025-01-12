@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\tetrisai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:tetrisai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +17,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|c:\\users\\gabri\\source\\repos\\tetrisc-\\tetrisai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{188BFB49-0993-454A-9B12-480224D187BA}|TetrisC.csproj|solutionrelative:tetrisai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,50 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameState.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\GameState.cs",
-              "RelativeDocumentMoniker": "GameState.cs",
-              "ToolTip": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\GameState.cs",
-              "RelativeToolTip": "GameState.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAAwwIQAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T15:10:53.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TetrisAI.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\TetrisAI.cs",
-              "RelativeDocumentMoniker": "TetrisAI.cs",
-              "ToolTip": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\TetrisAI.cs",
-              "RelativeToolTip": "TetrisAI.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAIwDoAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T15:09:12.972Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAwwO8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAAwBABAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-10T14:47:06.611Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -89,19 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T14:47:00.899Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -109,6 +71,45 @@
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-01-10T14:44:46.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T14:47:00.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TetrisAI.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\TetrisAI.cs",
+              "RelativeDocumentMoniker": "TetrisAI.cs",
+              "ToolTip": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\TetrisAI.cs",
+              "RelativeToolTip": "TetrisAI.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAYwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T15:09:12.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\GameState.cs",
+              "RelativeDocumentMoniker": "GameState.cs",
+              "ToolTip": "C:\\Users\\gabri\\source\\repos\\TetrisC-\\GameState.cs",
+              "RelativeToolTip": "GameState.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAYwN0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T15:10:53.295Z",
               "EditorCaption": ""
             }
           ]

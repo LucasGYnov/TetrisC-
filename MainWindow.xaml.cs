@@ -44,13 +44,42 @@ namespace TetrisC
         private GameState gameState = new GameState();
         private TetrisAI ai;
 
+        private Key moveLeftKey = Key.Left;
+        private Key moveRightKey = Key.Right;
+        private Key rotateCWKey = Key.Up;
+        private Key rotateCCWKey = Key.Z;
+        private Key dropKey = Key.Space;
+        private Key holdKey = Key.C;
+        private Key softDropKey = Key.Down;
+        private Button? currentKeyChangeButton;
+
         public MainWindow()
         {
             InitializeComponent();
             imageControls = SetupGameCanvas(gameState.GameGrid);
             ai = new TetrisAI(gameState, gameState.BlockQueue);
 
+            LoadKeyBindings();
             ShowMenu();
+        }
+
+        private void LoadKeyBindings()
+        {
+            moveLeftKey = Key.Left;
+            moveRightKey = Key.Right;
+            rotateCWKey = Key.Up;
+            rotateCCWKey = Key.Z;
+            dropKey = Key.Space;
+            holdKey = Key.C;
+            softDropKey = Key.Down;
+
+            LeftKeyText.Text = moveLeftKey.ToString();
+            RightKeyText.Text = moveRightKey.ToString();
+            RotateCWKeyText.Text = rotateCWKey.ToString();
+            RotateCCWKeyText.Text = rotateCCWKey.ToString();
+            DropKeyText.Text = dropKey.ToString();
+            HoldKeyText.Text = holdKey.ToString();
+            SoftDropKeyText.Text = softDropKey.ToString();
         }
 
         private Image[,] SetupGameCanvas(GameGrid grid)
@@ -168,34 +197,92 @@ namespace TetrisC
                 return;
             }
 
-            switch (e.Key)
+            if (currentKeyChangeButton != null)
             {
-                case Key.Left:
-                    gameState.MoveBlockLeft();
-                    break;
-                case Key.Right:
-                    gameState.MoveBlockRight();
-                    break;
-                case Key.Down:
-                    gameState.MoveBlockDown();
-                    break;
-                case Key.Up:
-                    gameState.RotateBlockCW();
-                    break;
-                case Key.Z:
-                    gameState.RotateBlockCCW();
-                    break;
-                case Key.C:
-                    gameState.HoldBlock();
-                    break;
-                case Key.Space:
-                    gameState.DropBlock();
-                    break;
-                default:
-                    return;
+                AssignKey(e.Key);
+                currentKeyChangeButton.Content = "Changer";
+                currentKeyChangeButton = null;
+                return;
+            }
+
+            if (e.Key == moveLeftKey)
+            {
+                gameState.MoveBlockLeft();
+            }
+            else if (e.Key == moveRightKey)
+            {
+                gameState.MoveBlockRight();
+            }
+            else if (e.Key == rotateCWKey)
+            {
+                gameState.RotateBlockCW();
+            }
+            else if (e.Key == rotateCCWKey)
+            {
+                gameState.RotateBlockCCW();
+            }
+            else if (e.Key == dropKey)
+            {
+                gameState.DropBlock();
+            }
+            else if (e.Key == holdKey)
+            {
+                gameState.HoldBlock();
+            }
+            else if (e.Key == softDropKey)
+            {
+                gameState.MoveBlockDown();
             }
 
             Draw(gameState);
+        }
+
+        private void ChangeKey_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                currentKeyChangeButton = button;
+                button.Content = "Appuyez sur une touche...";
+            }
+        }
+
+        private void AssignKey(Key newKey)
+        {
+            if (currentKeyChangeButton == ChangeLeftKeyButton)
+            {
+                moveLeftKey = newKey;
+                LeftKeyText.Text = newKey.ToString();
+            }
+            else if (currentKeyChangeButton == ChangeRightKeyButton)
+            {
+                moveRightKey = newKey;
+                RightKeyText.Text = newKey.ToString();
+            }
+            else if (currentKeyChangeButton == ChangeRotateCWKeyButton)
+            {
+                rotateCWKey = newKey;
+                RotateCWKeyText.Text = newKey.ToString();
+            }
+            else if (currentKeyChangeButton == ChangeRotateCCWKeyButton)
+            {
+                rotateCCWKey = newKey;
+                RotateCCWKeyText.Text = newKey.ToString();
+            }
+            else if (currentKeyChangeButton == ChangeDropKeyButton)
+            {
+                dropKey = newKey;
+                DropKeyText.Text = newKey.ToString();
+            }
+            else if (currentKeyChangeButton == ChangeHoldKeyButton)
+            {
+                holdKey = newKey;
+                HoldKeyText.Text = newKey.ToString();
+            }
+            else if (currentKeyChangeButton == ChangeSoftDropKeyButton)
+            {
+                softDropKey = newKey;
+                SoftDropKeyText.Text = newKey.ToString();
+            }
         }
 
         private async void GameCanvas_Loaded(object sender, RoutedEventArgs e)
@@ -229,11 +316,29 @@ namespace TetrisC
 
         private void ShowOptions_Click(object sender, RoutedEventArgs e)
         {
+            MainMenu.Visibility = Visibility.Collapsed;
+            OptionsMenu.Visibility = Visibility.Visible;
         }
 
         private void QuitGame_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown(); 
+        }
+
+        private void ReturnToMenu_Click(object sender, RoutedEventArgs e)
+        {
+            OptionsMenu.Visibility = Visibility.Collapsed;
+            GameOverMenu.Visibility = Visibility.Hidden;
+            GameArea.Visibility = Visibility.Collapsed;
+
+            gameState = new GameState();
+
+            MainMenu.Visibility = Visibility.Visible;
+        }
+
+        private void SaveOptions_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Touches sauvegardées !");
         }
 
         private async void InitializeGame()
