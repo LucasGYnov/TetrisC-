@@ -35,6 +35,10 @@
                 <StackPanel Margin="0,10">
                     <TextBlock Text="Configuration des touches :" FontSize="24" Margin="0,0,0,10" />
                     <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <TextBlock Text="Musique :" Width="150" FontSize="20" />
+                        <CheckBox x:Name="MusicToggle" Content="Activer" IsChecked="True" Checked="MusicToggle_Checked" Unchecked="MusicToggle_Unchecked" Width="120" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
                         <TextBlock Text="Gauche :" Width="150" FontSize="20" />
                         <Button x:Name="ChangeLeftKeyButton" Content="Changer" Click="ChangeKey_Click" Width="120" />
                         <TextBlock x:Name="LeftKeyText" Text="←" Width="50" FontSize="20" TextAlignment="Center" />
@@ -71,7 +75,6 @@
                     </StackPanel>
                 </StackPanel>
 
-                <Button Content="Sauvegarder" Click="SaveOptions_Click" Width="250" Height="50" Margin="0,20" />
                 <Button Content="Retour au menu" Click="ReturnToMenu_Click" Width="250" Height="50" Margin="0,10" />
             </StackPanel>
         </Grid>

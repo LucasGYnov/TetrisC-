@@ -11,7 +11,7 @@ namespace TetrisC
 {
     public partial class MainWindow : Window
     {
-        private readonly ImageSource[] tileImages = new ImageSource[] 
+        private readonly ImageSource[] tileImages = new ImageSource[]
         {
             new BitmapImage(new Uri("Assets/TileEmpty.png", UriKind.Relative)),
             new BitmapImage(new Uri("Assets/TileCyan.png", UriKind.Relative)),
@@ -23,7 +23,7 @@ namespace TetrisC
             new BitmapImage(new Uri("Assets/TileRed.png", UriKind.Relative))
         };
 
-        private readonly ImageSource[] blockImages = new ImageSource[] 
+        private readonly ImageSource[] blockImages = new ImageSource[]
         {
             new BitmapImage(new Uri("Assets/Block-Empty.png", UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Block-I.png", UriKind.Relative)),
@@ -36,7 +36,7 @@ namespace TetrisC
         };
 
         private readonly Image[,] imageControls;
-        private readonly int[] dropDelays = 
+        private readonly int[] dropDelays =
         {
             1000, 793, 618, 473, 355, 262, 190, 135, 94, 64, 43, 28, 18, 11, 7, 5, 3, 2, 1, 1
         }; // Temps en millisecondes par niveau (Tetris guideline)
@@ -53,12 +53,15 @@ namespace TetrisC
         private Key softDropKey = Key.Down;
         private Button? currentKeyChangeButton;
 
+        private MediaPlayer backgroundMusicPlayer = new MediaPlayer();
+
         public MainWindow()
         {
             InitializeComponent();
             imageControls = SetupGameCanvas(gameState.GameGrid);
             ai = new TetrisAI(gameState, gameState.BlockQueue);
 
+            PlayBackgroundMusic();
             LoadKeyBindings();
             ShowMenu();
         }
@@ -322,7 +325,7 @@ namespace TetrisC
 
         private void QuitGame_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown(); 
+            Application.Current.Shutdown();
         }
 
         private void ReturnToMenu_Click(object sender, RoutedEventArgs e)
@@ -336,17 +339,31 @@ namespace TetrisC
             MainMenu.Visibility = Visibility.Visible;
         }
 
-        private void SaveOptions_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Touches sauvegardées !");
-        }
-
         private async void InitializeGame()
         {
             gameState = new GameState();
             GameOverMenu.Visibility = Visibility.Hidden;
 
             await GameLoop();
+        }
+        private void PlayBackgroundMusic()
+        {
+            string musicPath = "Assets/LofiLion-TameTheBeast.mp3";
+
+            backgroundMusicPlayer.Open(new Uri(musicPath, UriKind.Relative));
+            backgroundMusicPlayer.MediaEnded += (sender, e) => backgroundMusicPlayer.Position = TimeSpan.Zero;
+            backgroundMusicPlayer.Play();
+        }
+
+        private void MusicToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            backgroundMusicPlayer.Volume = 1.0;
+            backgroundMusicPlayer.Play();
+        }
+
+        private void MusicToggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            backgroundMusicPlayer.Volume = 0.0;
         }
     }
 }

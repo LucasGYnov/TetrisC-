@@ -20,3 +20,5 @@ C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\refint\TetrisC.dll
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC.pdb
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC.genruntimeconfig.cache
 C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\ref\TetrisC.dll
+C:\Users\gabri\source\repos\TetrisC-\bin\Debug\net5.0-windows\Assets\LofiLion-TameTheBeast.mp3
+C:\Users\gabri\source\repos\TetrisC-\obj\Debug\net5.0-windows\TetrisC_Content.g.cs

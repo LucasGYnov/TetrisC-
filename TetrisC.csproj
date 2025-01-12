@@ -20,6 +20,7 @@
     <None Remove="Assets\Block-T.png" />
     <None Remove="Assets\Block-Z.png" />
     <None Remove="Assets\Icon.ico" />
+    <None Remove="Assets\LofiLion-TameTheBeast.mp3" />
     <None Remove="Assets\TileBlue.png" />
     <None Remove="Assets\TileCyan.png" />
     <None Remove="Assets\TileEmpty.png" />
@@ -28,6 +29,12 @@
     <None Remove="Assets\TilePurple.png" />
     <None Remove="Assets\TileRed.png" />
     <None Remove="Assets\TileYellow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\LofiLion-TameTheBeast.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
